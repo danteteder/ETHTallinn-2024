@@ -36,7 +36,13 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
       justifyContent: "center",
       color: isDarkMode ? "white" : "black" ,
       fontSize: '40px' 
-    }
+    },
+        h1: {
+      textAlign: "center",
+    },
+    div: {
+      textAlign: "center",
+    },
   } as const;
 
   return (
@@ -44,30 +50,32 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
       <div style={styles.center}><h1>Forgetful<img src={forgetful_grandma} alt="Logo" width="120" height="102" /></h1></div>
       <div style={styles.content}>
         <div style={styles.half}>
-          <div style={{ marginBottom: '60px'}}>
-<h1 >Don't Worry, We All Forget</h1>
-
+          <div style={{...styles.div, marginBottom: '60px'}}>
+            <h1 style={styles.h1} >Don't Worry, We All Forget</h1>
+            <div style={styles.div}>Tired of forgetting passwords and seed phrases? <br/> It's like trying to find a Bitcoin in a haystack! <br/>But fear not, we've got the blockchain magic to fix that.</div>
           </div>
-          <div style={{ width: '70%' }}>
+          <div style={{...styles.div, width: '70%' }}>
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
-          <h1>What We Solve 1</h1>
-          <div style={{ width: '70%' }}>
+          <h1 style={styles.h1}>What We Solve</h1>
+          <div style={{...styles.div,width: '70%' }}>
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
-          <div>Text underneath Title 1</div>
+          <div style={{...styles.div, marginTop: '30px'}}>You know yourself, you will forget your password, but you'll never forget core things about yourself. We help you think ahead and forge a way to secure a password even if you've forgotten about it.
+            
+             </div>
 
-          <h1>How We Solve</h1>
+          <h1 style={styles.h1}>How We Solve It</h1>
+              <div style={{ width: '70%' }}>
+            <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
+          </div>
+          <div style={{...styles.div, marginTop: '30px'}}>By combining biometric identification, self-assigned security questions (If you're feeling uncreative, AI will help), and blockchain encryptions</div>
+
+          <h1 style={styles.h1}>Potential Usecase Flow</h1>
                     <div style={{ width: '70%' }}>
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
-          <div>Text underneath Title 2</div>
-
-          <h1>Potential Usecase Flow</h1>
-                    <div style={{ width: '70%' }}>
-            <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
-          </div>
-          <div>Text underneath Title 2</div>
+          <div>INSERT POTENTIAL FLOW DIAGRAM</div>
 
         </div>
         <div style={styles.half}>
