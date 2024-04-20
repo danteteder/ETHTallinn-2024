@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { SelectOutlined } from "@ant-design/icons";
 import { useWeb3React } from "@web3-react/core";
 import { Button, Card, Modal } from "antd";
 

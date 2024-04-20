@@ -2,7 +2,6 @@ import { useWeb3React } from "@web3-react/core";
 import { Divider } from "antd";
 import { useWindowSize } from "hooks";
 import { Infos, SignMessage, Status, TransferEth } from "./components";
-import BiometricAuthButton from "./components/BiometricAuthButton";
 import UserFormSignIn from "./components/UserForm";
 
 
@@ -35,7 +34,6 @@ type DisplayPaneProps = {
 };
 
 const DisplayPane: React.FC<DisplayPaneProps> = ({ isDarkMode }) => {
-  const currentURL = window.location.href
   const { chainId, isActivating, isActive } = useWeb3React();
   const { isTablet } = useWindowSize();
   
@@ -51,8 +49,6 @@ const DisplayPane: React.FC<DisplayPaneProps> = ({ isDarkMode }) => {
       <div style={styles.content}>
         <Status isActivating={isActivating} isActive={isActive} />
         <Infos chainId={chainId} />
-
-        <BiometricAuthButton currentURL={currentURL} />
 
         <UserFormSignIn />
 

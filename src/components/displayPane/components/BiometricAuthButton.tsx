@@ -1,11 +1,14 @@
-import { Box, Divider } from '@mui/material';
-import { Button } from 'antd';
+import { Box, Divider, Button } from '@mui/material';
 
 type BiometricAuthButtonProps = {
- currentURL: string   
+ currentURL: string,
+ styles: {
+    half: any
+ },
+isDarkMode: any
 }
 
-const BiometricAuthButton = ({ currentURL }: BiometricAuthButtonProps) => {
+const BiometricAuthButton = ({ currentURL, styles, isDarkMode }: BiometricAuthButtonProps) => {
     const userInfo = {
                 id: new Uint8Array(16),
                 name: 'ethTallinn@example.com',
@@ -89,9 +92,17 @@ const BiometricAuthButton = ({ currentURL }: BiometricAuthButtonProps) => {
 
     return (
         <Box display='flex' justifyContent='center'>
-            <Button onClick={handleSignUp}>Forgetful</Button>
-                <Divider orientation="vertical" sx={{padding: 0.5}} />
-            <Button onClick={handleSignIn}></Button>
+            <div style={styles.half}>
+                <Button variant="contained" size="large" onClick={handleSignUp} sx={{ fontFamily: "'IBM Plex Mono', monospace", marginBottom: '10px', fontSize: '20px', fontWeight: 'bold' }}>
+                  Create Your Password
+                </Button>
+                    <div style={{ width: '25%' }}>
+                      <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
+                    </div>
+                <Button variant="contained" size="large" onClick={handleSignIn} sx={{ fontFamily: "'IBM Plex Mono', monospace", marginTop: '10px', fontSize: '20px', fontWeight: 'bold' }}>
+                  Retrieve Your Password
+                </Button>
+            </div>
         </Box>
     );
 }
