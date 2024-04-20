@@ -1,10 +1,13 @@
 import { Buffer } from "buffer";
 import { useState } from "react";
 import { Layout, ConfigProvider, theme } from "antd";
-import { CustomHeader, MainContent, CustomFooter } from "layout";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import "styles/App.css";
+import CreateAccountPage from "./layout/sign-up";
+import MainContent from "./layout/MainContent/MainContent";
+import { CustomFooter, CustomHeader } from "./layout";
+
 const styles = {
   layout: {
     width: "100vw",
@@ -17,6 +20,7 @@ function App() {
   const { defaultAlgorithm, darkAlgorithm } = theme;
   const [isDarkMode, setIsDarkMode] = useState(true);
   if (!window.Buffer) window.Buffer = Buffer;
+
   return (
     <ConfigProvider
       theme={{
@@ -29,6 +33,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MainContent isDarkMode={isDarkMode} />} />
             <Route path="/create-password" element={<MainContent isDarkMode={isDarkMode} />} />
+            <Route path="/sign-up" element={<CreateAccountPage isDarkMode={isDarkMode} />} />
           </Routes>
         </Router>
         <CustomFooter />

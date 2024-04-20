@@ -1,5 +1,5 @@
 import { Box, Divider, Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 type BiometricAuthButtonProps = {
  currentURL: string,
@@ -15,6 +15,9 @@ const BiometricAuthButton = ({ currentURL, styles, isDarkMode }: BiometricAuthBu
                 name: 'ethTallinn@example.com',
                 displayName: 'Big Black Wolf', 
             };
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    const navigate= useNavigate();
 
     if(!window.PublicKeyCredential) {
         return null;
@@ -48,7 +51,7 @@ const BiometricAuthButton = ({ currentURL, styles, isDarkMode }: BiometricAuthBu
                      userVerification: 'required',
                  },
              });
-             console.log('Biometric authentication successful:', assertion);
+                console.log('Biometric authentication successful:', assertion);
             }
          } catch (error) {
              console.error('Biometric authentication failed:', error);
@@ -86,6 +89,9 @@ const BiometricAuthButton = ({ currentURL, styles, isDarkMode }: BiometricAuthBu
             }
 
             console.log('Biometric credential created successfully:', newCredential);
+
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+            navigate('/sign-up');
         } catch (error) {
             console.error('Biometric credential creation failed:', error);
         }
@@ -94,16 +100,14 @@ const BiometricAuthButton = ({ currentURL, styles, isDarkMode }: BiometricAuthBu
     return (
         <Box display='flex' justifyContent='center'>
             <div style={styles.half}>
-                <Link to="/create-password">
-                    <Button variant="contained" size="large" onClick={handleSignUp} sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396' }}>
-                      Create Your Password
-                    </Button>
-                </Link>
+                <Button variant="contained" size="large" onClick={handleSignUp} sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396' }}>
+                    Create Your Password
+                </Button>
                     <div style={{ width: '25%' }}>
                       <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
                     </div>
                 <Button variant="contained" size="large" onClick={handleSignIn} sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396'}}>
-                  Retrieve Your Password
+                    Retrieve Your Password
                 </Button>
             </div>
         </Box>
