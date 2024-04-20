@@ -50,15 +50,17 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
           <h1>Title 1</h1>
+                    <div style={{ width: '70%' }}>
+            <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
+          </div>
           <div>Text underneath Title 1</div>
-          <div style={{ width: '70%' }}>
-            <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
-          </div>
+
           <h1>Title 2</h1>
-          <div>Text underneath Title 2</div>
-          <div style={{ width: '70%' }}>
+                    <div style={{ width: '70%' }}>
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
+          <div>Text underneath Title 2</div>
+
         </div>
         <div style={styles.half}>
         <Link to="/create-password">
@@ -69,7 +71,7 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
           <div style={{ width: '25%' }}>
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
-          <Button variant="contained" size="large" sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold',               backgroundColor: '#0A9396',
+          <Button variant="contained" size="large" sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396',
  }}>
             Retrieve Your Password
           </Button>
