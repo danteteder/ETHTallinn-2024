@@ -4,8 +4,7 @@ import { Button, Layout } from "antd";
 
 import dark_mode from "assets/images/dark_mode.png";
 import light_mode from "assets/images/light_mode.png";
-import web3Boilerplate_logo from "assets/images/web3Boilerplate_logo.png";
-import web3Boilerplate_logo_dark from "assets/images/web3Boilerplate_logo_dark.png";
+import forgetful_grandma from "assets/images/forgetful_grandma.png";
 import ConnectAccount from "components/Account/ConnectAccount";
 import ChainSelector from "components/ChainSelector";
 import { useWindowSize } from "hooks";
@@ -76,8 +75,8 @@ export const Logo: FC<LogoProps> = ({ isDarkMode }) => {
   return (
     <div style={{ paddingTop: isTablet ? "25px" : "40px" }}>
       <img
-        src={isDarkMode ? web3Boilerplate_logo_dark : web3Boilerplate_logo}
-        alt="web3Boilerplate_logo"
+        src={isDarkMode ? forgetful_grandma : forgetful_grandma}
+        alt="forgetful_grandma"
         width={isTablet ? "70px" : "90px"}
       />
     </div>

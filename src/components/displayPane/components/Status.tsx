@@ -1,6 +1,5 @@
 import type { Web3ReactHooks } from "@web3-react/core";
-import { Typography } from "antd";
-const { Paragraph } = Typography;
+import {  } from "antd";
 
 const styles = {
   display: {
@@ -36,11 +35,9 @@ const Status = ({
 
   return (
     <div style={styles.display}>
-      <Typography>
-        <Paragraph style={styles.statusText}>
+        <div style={styles.statusText}>
           Account status: <span style={styles.statusValue}>{status}</span>
-        </Paragraph>
-      </Typography>
+        </div>
     </div>
   );
 };

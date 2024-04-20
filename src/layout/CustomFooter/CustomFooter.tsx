@@ -1,9 +1,8 @@
 import { FC } from "react";
 
-import { Layout, Typography } from "antd";
+import { Layout } from "antd";
 
 const { Footer } = Layout;
-const { Text } = Typography;
 
 const styles = {
   footer: {
@@ -18,11 +17,13 @@ const styles = {
 const CustomFooter: FC = () => {
   return (
     <Footer style={styles.footer}>
-      <Typography>
-        <Text>
-          Sticky footer goes here BOIZ
-        </Text>
-      </Typography>
+        <div>
+          Checkout our <a href="https://github.com/danteteder/ETHTallinn-2024" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>{" "} for more information!
+
+
+        </div>
     </Footer>
   );
 };
