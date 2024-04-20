@@ -102,9 +102,11 @@ const BiometricAuthButton = ({ currentURL, styles, isDarkMode }: BiometricAuthBu
                     <div style={{ width: '25%' }}>
                       <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
                     </div>
+                    <Link to="/retrieve-password">
                 <Button variant="contained" size="large" onClick={handleSignIn} sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396'}}>
                   Retrieve Your Password
                 </Button>
+                </Link>
             </div>
         </Box>
     );

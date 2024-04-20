@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import "styles/App.css";
 import RetrievePassword from './components/RetrievePassword';
+import CreatePassword from "./components/CreatePassword";
 const styles = {
   layout: {
     width: "100vw",
@@ -29,7 +30,7 @@ function App() {
           <CustomHeader isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
           <Routes>
             <Route path="/" element={<MainContent isDarkMode={isDarkMode} />} />
-            <Route path="/create-password" element={<MainContent isDarkMode={isDarkMode} />} />
+            <Route path="/create-password" element={<CreatePassword isDarkMode={isDarkMode} />} />
             <Route path="/retrieve-password" element={<RetrievePassword isDarkMode={isDarkMode} />} />
           </Routes>
         </Router>
