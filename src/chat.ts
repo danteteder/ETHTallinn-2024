@@ -1,6 +1,8 @@
-import {Contract, ethers, TransactionReceipt, Wallet} from "ethers";
+import {Contract, Wallet} from "ethers";
 import ABI from "../contracts-main/examples/abis/ChatGpt.json";
 import * as readline from 'readline';
+import { JsonRpcProvider } from '@ethersproject/providers';
+
 
 require("dotenv").config()
 
@@ -17,7 +19,7 @@ async function main() {
   const contractAddress = process.env.CHAT_CONTRACT_ADDRESS
   if (!contractAddress) throw Error("Missing CHAT_CONTRACT_ADDRESS in .env")
 
-  const provider = new ethers.JsonRpcProvider(rpcUrl)
+  const provider = new JsonRpcProvider(rpcUrl)
   const wallet = new Wallet(
     privateKey, provider
   )
@@ -60,40 +62,32 @@ async function main() {
 
 }
 
-async function getUserInput(): Promise<string | undefined> {
+async function getUserInput(): Promise<string | void> {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-  })
+  });
 
-  const question = (query: string): Promise<string> => {
-    return new Promise((resolve) => {
-      rl.question(query, (answer) => {
-        resolve(answer)
-      })
-    })
-  }
-
-  try {
-    const input = await question("Message ChatGPT: ")
-    rl.close()
-    return input
-  } catch (err) {
-    console.error('Error getting user input:', err)
-    rl.close()
-  }
+  return new Promise<string>((resolve) => {
+    rl.question('Enter a message: ', (message: string) => {
+      rl.close();
+      resolve(message);
+    });
+  }).catch(err => {
+    console.error('Error getting user input:', err);
+    rl.close();
+  });
 }
 
 
-function getChatId(receipt: TransactionReceipt, contract: Contract) {
+function getChatId(receipt, contract: Contract) {
   let chatId
   for (const log of receipt.logs) {
     try {
       const parsedLog = contract.interface.parseLog(log)
       if (parsedLog && parsedLog.name === "ChatCreated") {
         // Second event argument
-        chatId = ethers.toNumber(parsedLog.args[1])
-      }
+chatId = parsedLog.args[1].toNumber();      }
     } catch (error) {
       // This log might not have been from your contract, or it might be an anonymous log
       console.log("Could not parse log:", log)
@@ -111,7 +105,8 @@ async function getNewMessages(
   const roles = await contract.getMessageHistoryRoles(chatId)
 
   const newMessages: Message[] = []
-  messages.forEach((message: any, i: number) => {
+  messages.forEach((_, i: number) => {
+
     if (i >= currentMessagesCount) {
       newMessages.push({
         role: roles[i],
