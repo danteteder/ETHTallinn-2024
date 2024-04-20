@@ -5,8 +5,6 @@ import { useNativeBalance, useWindowSize } from "hooks";
 import { getEllipsisTxt, parseBigNumberToFloat } from "utils/formatters";
 const { Paragraph } = Typography;
 
-
-
 const styles = {
   display: {
     paddingBlock: "0 15px",

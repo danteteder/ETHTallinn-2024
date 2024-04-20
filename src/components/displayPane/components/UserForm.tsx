@@ -2,8 +2,6 @@ import { Divider, Grid, TextField, Typography } from "@mui/material";
 
 const UserFormSignIn = () => {
 
-    
-
     return (
         <Grid item md={3}>
         <Typography sx={{ paddingTop: 2 }}>etails.orgName</Typography>
