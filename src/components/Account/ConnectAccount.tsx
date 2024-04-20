@@ -49,6 +49,8 @@ const ConnectAccount: React.FC<WantedChain> = () => {
   const { isTablet } = useWindowSize();
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState<boolean>(false);
+  const [isDarkMode] = useState(false); 
+
 
   const disconnect = useCallback(async () => {
     const connector = metaMask || walletConnect;
@@ -74,8 +76,7 @@ const ConnectAccount: React.FC<WantedChain> = () => {
           <Button shape="round" type="primary" style={styles.button} onClick={() => setIsAuthModalOpen(true)}>
             Connect Wallet
           </Button>
-          <ConnectModal isModalOpen={isAuthModalOpen} setIsModalOpen={setIsAuthModalOpen} />
-          <br />
+          <ConnectModal isModalOpen={isAuthModalOpen}  setIsModalOpen={setIsAuthModalOpen} isDarkMode={isDarkMode} />
         </div>
       ) : (
         <>

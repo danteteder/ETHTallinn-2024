@@ -26,6 +26,7 @@ const styles = {
 
 interface ConnectModalProps {
   isModalOpen: boolean;
+  isDarkMode: boolean; 
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -33,7 +34,7 @@ const { useIsActivating: useMMIsActivating } = metaMaskhooks;
 const { useIsActivating: useWCIsActivating } = walletConnecthooks;
 const { useIsActivating: useCBIsActivating } = coinbaseWallethooks;
 
-const ConnectModal: React.FC<ConnectModalProps> = ({ isModalOpen, setIsModalOpen }) => {
+const ConnectModal: React.FC<ConnectModalProps> = ({ isModalOpen, setIsModalOpen, isDarkMode }) => {
   const [messageApi, contextHolder] = message.useMessage();
   const isMMActivating = useMMIsActivating();
   const isWCActivating = useWCIsActivating();
@@ -72,7 +73,15 @@ const ConnectModal: React.FC<ConnectModalProps> = ({ isModalOpen, setIsModalOpen
         open={isModalOpen}
         footer={null}
         width={280}
-        styles={{ body: { padding: "15px", fontSize: "17px", fontWeight: "500" } }}
+        styles={{ 
+          body: { 
+            padding: "15px", 
+            fontSize: "17px", 
+            fontWeight: "500",
+            color: isDarkMode ? "white" : "black", 
+            backgroundColor: isDarkMode ? "black" : "white" 
+          } 
+        }}
         onCancel={() => setIsModalOpen(false)}
       >
         <div style={styles.modalTitle}>Connect Your Wallet</div>

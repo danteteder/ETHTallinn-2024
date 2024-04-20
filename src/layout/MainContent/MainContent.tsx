@@ -37,7 +37,7 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
 
   return (
     <>
-      <div style={styles.center}><h1>Forgetful <img src={forgetful_grandma} alt="Logo" width="100" height="75" /></h1></div>
+      <div style={styles.center}><h1>Forgetful<img src={forgetful_grandma} alt="Logo" width="120" height="102" /></h1></div>
       <div style={styles.content}>
         <div style={styles.half}>
           <h1>Title 0</h1>
