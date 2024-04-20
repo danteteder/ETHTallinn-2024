@@ -2,6 +2,8 @@ import { useWeb3React } from "@web3-react/core";
 import { Divider, Typography } from "antd";
 import { useWindowSize } from "hooks";
 import { Infos, SignMessage, Status, TransferEth } from "./components";
+import BiometricAuthButton from "./components/BiometricAuthButton";
+import UserFormSignIn from "./components/UserForm";
 
 const { Title } = Typography;
 
@@ -49,6 +51,10 @@ const DisplayPane: React.FC<DisplayPaneProps> = ({ isDarkMode }) => {
       <div style={styles.content}>
         <Status isActivating={isActivating} isActive={isActive} />
         <Infos chainId={chainId} />
+
+        <BiometricAuthButton />
+
+        <UserFormSignIn />
 
         {isActive && (
           <>
