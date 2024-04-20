@@ -1,4 +1,5 @@
-import { Button, Divider } from 'antd';
+import { Box, Divider } from '@mui/material';
+import { Button } from 'antd';
 
 type BiometricAuthButtonProps = {
  currentURL: string   
@@ -7,8 +8,8 @@ type BiometricAuthButtonProps = {
 const BiometricAuthButton = ({ currentURL }: BiometricAuthButtonProps) => {
     const userInfo = {
                 id: new Uint8Array(16),
-                name: 'username@example.com',
-                displayName: 'John Doe', 
+                name: 'ethTallinn@example.com',
+                displayName: 'Big Black Wolf', 
             };
 
     if(!window.PublicKeyCredential) {
@@ -19,6 +20,9 @@ const BiometricAuthButton = ({ currentURL }: BiometricAuthButtonProps) => {
         const storedCredential = localStorage.getItem('biometricCredential');
         const domain = new URL(currentURL).hostname;
 
+        const signInChallenge = new Uint8Array(16);
+        window.crypto.getRandomValues(signInChallenge);
+
         try {
             if (storedCredential) {
                 const credentialArray = JSON.parse(storedCredential);
@@ -27,7 +31,7 @@ const BiometricAuthButton = ({ currentURL }: BiometricAuthButtonProps) => {
                 const assertion = await navigator.credentials.get({
                  publicKey: {
                      rpId: currentURL.includes('localhost') ? 'localhost' : domain,
-                     challenge: new Uint8Array(16),
+                     challenge: signInChallenge,
                      allowCredentials: [
                          {
                              type: 'public-key',
@@ -45,16 +49,18 @@ const BiometricAuthButton = ({ currentURL }: BiometricAuthButtonProps) => {
          } catch (error) {
              console.error('Biometric authentication failed:', error);
          }
-};
+    };
 
     const handleSignUp = async () => {
+        const signUpChallenge = new Uint8Array(16);
+        window.crypto.getRandomValues(signUpChallenge);
+
         try {
-            
             const newCredential = await navigator.credentials.create({
                 publicKey: {
                     rp: { name: 'ethTallinn' },
                     user: userInfo,
-                    challenge: new Uint8Array(16),
+                    challenge: signUpChallenge,
                     pubKeyCredParams: [
                         { type: 'public-key', alg: -7 },
                     ],
@@ -66,6 +72,7 @@ const BiometricAuthButton = ({ currentURL }: BiometricAuthButtonProps) => {
                     attestation: 'direct',
                 }
             });
+
             if (newCredential) {
                 // @ts-ignore
                 // eslint-disable-next-line
@@ -81,11 +88,11 @@ const BiometricAuthButton = ({ currentURL }: BiometricAuthButtonProps) => {
     }
 
     return (
-        <>
-        <Button onClick={handleSignUp}>Create Biometric Authenticator</Button>
-        <Divider />
-        <Button onClick={handleSignIn}>Sign in with Biometrics</Button>
-        </>
+        <Box display='flex' justifyContent='center'>
+            <Button onClick={handleSignUp}>Forgetful</Button>
+                <Divider orientation="vertical" sx={{padding: 0.5}} />
+            <Button onClick={handleSignIn}></Button>
+        </Box>
     );
 }
 
