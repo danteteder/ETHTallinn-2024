@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { useMemo } from "react";
 
 import { AddressZero } from "@ethersproject/constants";
