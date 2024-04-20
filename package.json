@@ -1,7 +1,7 @@
 {
-  "name": "web3-boilerplate",
+  "name": "Forgetful",
   "version": "0.2.0",
-  "author": "Pedrojok01 <pedrojok@pm.me>",
+  "author": "Team Forgetful",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
