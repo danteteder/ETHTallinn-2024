@@ -23,7 +23,7 @@ const BiometricAuthButton = () => {
                 console.log(binaryCredential)
                 const assertion = await navigator.credentials.get({
                  publicKey: {
-                     rpId: 'localhost',
+                     rpId: 'localhost' || 'ethtallinn',
                      challenge: new Uint8Array(16),
                      allowCredentials: [
                          {
