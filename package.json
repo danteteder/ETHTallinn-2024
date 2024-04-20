@@ -24,10 +24,6 @@
     "@web3-react/types": "8.2.3",
     "@web3-react/url": "8.2.3",
     "@web3-react/walletconnect-v2": "8.5.1",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@mui/icons-material": "^5.15.15",
-    "@mui/material": "^5.15.15",
     "antd": "5.12.5",
     "buffer": "^6.0.3",
     "eslint-plugin-react-refresh": "^0.4.6",
@@ -35,6 +31,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-jazzicon": "1.0.4",
+    "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "swr": "^2.2.4"
   },

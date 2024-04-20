@@ -58,7 +58,7 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
         </div>
-        <BiometricAuthButton currentURL={currentURL} styles={styles} isDarkMode={isDarkMode}/>
+          <BiometricAuthButton currentURL={currentURL} styles={styles} isDarkMode={isDarkMode}/>
       </div>
     </>
   );
