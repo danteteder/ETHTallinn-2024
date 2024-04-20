@@ -56,13 +56,15 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
           </div>
         </div>
         <div style={styles.half}>
-          <Button variant="contained" size="large" sx={{ fontFamily: "'IBM Plex Mono', monospace", marginBottom: '10px', fontSize: '20px', fontWeight: 'bold' }}>
+          <Button variant="contained" size="large" sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold',               backgroundColor: '#0A9396', 
+ }}>
             Create Your Password
           </Button>
           <div style={{ width: '25%' }}>
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
-          <Button variant="contained" size="large" sx={{ fontFamily: "'IBM Plex Mono', monospace", marginTop: '10px', fontSize: '20px', fontWeight: 'bold' }}>
+          <Button variant="contained" size="large" sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold',               backgroundColor: '#0A9396',
+ }}>
             Retrieve Your Password
           </Button>
         </div>
