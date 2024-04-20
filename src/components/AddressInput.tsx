@@ -1,13 +1,13 @@
 /* eslint-disable */
 import { CSSProperties, Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from "react";
 
-import { SearchOutlined } from "@ant-design/icons";
+// import { SearchOutlined } from "@ant-design/icons";
 import { useWeb3React } from "@web3-react/core";
 import { Input, InputRef } from "antd";
 
 import { getEllipsisTxt } from "utils/formatters";
 
-import Jazzicons from "./Jazzicons";
+//import Jazzicons from "./Jazzicons";
 
 export interface AddressInputProps {
   address?: string;
@@ -97,13 +97,7 @@ const AddressInput: React.FC<AddressInputProps> = (props) => {
     <Input
       ref={input}
       placeholder={props.placeholder ? props.placeholder : "Public address"}
-      prefix={
-        isDomain || address.length === 42 ? (
-          <Jazzicons seed={(isDomain ? validatedAddress : address).toLowerCase()} />
-        ) : (
-          <SearchOutlined />
-        )
-      }
+
       suffix={validatedAddress && <Cross />}
       autoFocus={props.autoFocus}
       value={isDomain ? `${address} (${getEllipsisTxt(validatedAddress)})` : validatedAddress || address}

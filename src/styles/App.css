@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', monospace !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -80,3 +80,4 @@ body {
   min-width: 350px;
   margin-inline: auto;
 }
+

@@ -1,9 +1,8 @@
 import { useWeb3React } from "@web3-react/core";
-import { Divider, Typography } from "antd";
+import { Divider } from "antd";
 import { useWindowSize } from "hooks";
 import { Infos, SignMessage, Status, TransferEth } from "./components";
 
-const { Title } = Typography;
 
 const styles = {
   container: {
@@ -45,7 +44,7 @@ const DisplayPane: React.FC<DisplayPaneProps> = ({ isDarkMode }) => {
         width: isTablet ? "90%" : "80%"
       }}
     >
-      <Title>Display Info</Title>
+      <div>Display Info</div>
       <div style={styles.content}>
         <Status isActivating={isActivating} isActive={isActive} />
         <Infos chainId={chainId} />

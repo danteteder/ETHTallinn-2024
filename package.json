@@ -11,7 +11,6 @@
     "prettier": "prettier --config .prettierrc \"**/*.{ts,tsx,js}\" --write"
   },
   "dependencies": {
-    "@ant-design/icons": "5.2.6",
     "@coinbase/wallet-sdk": "3.7.2",
     "@walletconnect/ethereum-provider": "2.11.0",
     "@web3-react/coinbase-wallet": "8.2.3",
@@ -21,6 +20,10 @@
     "@web3-react/types": "8.2.3",
     "@web3-react/url": "8.2.3",
     "@web3-react/walletconnect-v2": "8.5.1",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
     "antd": "5.12.5",
     "buffer": "^6.0.3",
     "ethers": "5.7.2",

@@ -1,4 +1,4 @@
-import { SelectOutlined } from "@ant-design/icons";
+//import { SelectOutlined } from "@ant-design/icons";
 import { useWeb3React } from "@web3-react/core";
 import { Button, Card, Modal } from "antd";
 
@@ -34,7 +34,6 @@ const DisconnectModal: React.FC<ConnectModalProps> = ({ isModalOpen, setIsModalO
         <div style={{ marginTop: "10px", padding: "0 10px" }}>
           {chainId !== undefined && (
             <a href={`${getExplorer(chainId)}/address/${account}`} target="_blank" rel="noreferrer">
-              <SelectOutlined style={{ marginRight: "5px" }} />
               View on Explorer
             </a>
           )}

@@ -1,7 +1,6 @@
 import { FC } from "react";
 
-import { Button, Typography } from "antd";
-const { Text } = Typography;
+import { Button } from "antd";
 
 const styles = {
   connectButton: {
@@ -38,7 +37,7 @@ const ConnectButton: FC<ConnectButtonProps> = ({ label, image, onClick, loading 
       onClick={onClick}
       loading={loading}
     >
-      <Text style={styles.connectButtonText}>{label}</Text>
+      <div style={styles.connectButtonText}>{label}</div>
       <img src={image} width={32} height={32} alt="web3-wallet" />
     </Button>
   );
