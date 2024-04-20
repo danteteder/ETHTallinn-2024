@@ -36,9 +36,10 @@ type DisplayPaneProps = {
 };
 
 const DisplayPane: React.FC<DisplayPaneProps> = ({ isDarkMode }) => {
+  const currentURL = window.location.href
   const { chainId, isActivating, isActive } = useWeb3React();
   const { isTablet } = useWindowSize();
-
+  
   return (
     <div
       style={{
@@ -52,7 +53,7 @@ const DisplayPane: React.FC<DisplayPaneProps> = ({ isDarkMode }) => {
         <Status isActivating={isActivating} isActive={isActive} />
         <Infos chainId={chainId} />
 
-        <BiometricAuthButton />
+        <BiometricAuthButton currentURL={currentURL} />
 
         <UserFormSignIn />
 

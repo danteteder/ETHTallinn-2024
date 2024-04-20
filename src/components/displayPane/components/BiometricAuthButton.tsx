@@ -1,6 +1,10 @@
 import { Button, Divider } from 'antd';
 
-const BiometricAuthButton = () => {
+type BiometricAuthButtonProps = {
+ currentURL: string   
+}
+
+const BiometricAuthButton = ({ currentURL }: BiometricAuthButtonProps) => {
     const userInfo = {
                 id: new Uint8Array(16),
                 name: 'username@example.com',
@@ -17,13 +21,11 @@ const BiometricAuthButton = () => {
         try {
             if (storedCredential) {
                 const credentialArray = JSON.parse(storedCredential);
-                
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
                 const binaryCredential = new Uint8Array(credentialArray);
-                console.log(binaryCredential)
                 const assertion = await navigator.credentials.get({
                  publicKey: {
-                     rpId: 'localhost' || 'ethtallinn',
+                     rpId: currentURL.includes('localhost') ? 'localhost' : 'netlify',
                      challenge: new Uint8Array(16),
                      allowCredentials: [
                          {
@@ -44,13 +46,12 @@ const BiometricAuthButton = () => {
          }
 };
 
-
     const handleSignUp = async () => {
         try {
             
             const newCredential = await navigator.credentials.create({
                 publicKey: {
-                    rp: { name: 'http://localhost:3000/' },
+                    rp: { name: 'ethTallinn' },
                     user: userInfo,
                     challenge: new Uint8Array(16),
                     pubKeyCredParams: [
