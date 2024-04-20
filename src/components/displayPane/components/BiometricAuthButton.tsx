@@ -25,7 +25,7 @@ const BiometricAuthButton = ({ currentURL }: BiometricAuthButtonProps) => {
                 const binaryCredential = new Uint8Array(credentialArray);
                 const assertion = await navigator.credentials.get({
                  publicKey: {
-                     rpId: currentURL.includes('localhost') ? 'localhost' : 'netlify',
+                     rpId: currentURL.includes('localhost') ? 'localhost' : 'ethtallinn-forgetful',
                      challenge: new Uint8Array(16),
                      allowCredentials: [
                          {
