@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7808d3ec.css",
+    "main.js": "/static/js/main.19e86f9d.js",
+    "static/js/774.96489f87.chunk.js": "/static/js/774.96489f87.chunk.js",
+    "static/js/459.800bb28d.chunk.js": "/static/js/459.800bb28d.chunk.js",
+    "static/media/web3Boilerplate_logo.png": "/static/media/web3Boilerplate_logo.a895901adf5271029a9a.png",
+    "static/media/web3Boilerplate_logo_dark.png": "/static/media/web3Boilerplate_logo_dark.f2c32224af49c2a1f273.png",
+    "static/media/metamask_Logo.svg": "/static/media/metamask_Logo.322b917795f932ec2603591387f37bb1.svg",
+    "static/media/walletconnect_Logo.svg": "/static/media/walletconnect_Logo.dfa25e470b69d81428be54242b6c9bd1.svg",
+    "static/media/optimistim_Logo.svg": "/static/media/optimistim_Logo.34412af263c903b58c43a243c4a21d56.svg",
+    "index.html": "/index.html",
+    "static/media/bsc_Logo.svg": "/static/media/bsc_Logo.71c0a79965aef99d7a39158dfec8caaf.svg",
+    "main.7808d3ec.css.map": "/static/css/main.7808d3ec.css.map",
+    "main.19e86f9d.js.map": "/static/js/main.19e86f9d.js.map",
+    "774.96489f87.chunk.js.map": "/static/js/774.96489f87.chunk.js.map",
+    "459.800bb28d.chunk.js.map": "/static/js/459.800bb28d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7808d3ec.css",
+    "static/js/main.19e86f9d.js"
+  ]
+}
