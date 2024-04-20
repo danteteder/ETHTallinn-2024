@@ -24,7 +24,7 @@ function App() {
     >
       <Layout style={styles.layout}>
         <CustomHeader isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-        <MainContent />
+<MainContent isDarkMode={isDarkMode} />
         <CustomFooter />
       </Layout>
     </ConfigProvider>
