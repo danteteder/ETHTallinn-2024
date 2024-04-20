@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Divider } from "@mui/material";
+import { Button, Divider } from "@mui/material";
 import forgetful_grandma from 'assets/images/forgetful_grandma.png';
 import { Link } from 'react-router-dom';
 
