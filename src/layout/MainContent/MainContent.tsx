@@ -28,6 +28,7 @@ const styles = {
 const MainContent: FC<MainContentProps> = ({ children }) => {
   const { isTablet } = useWindowSize();
 
+
   return <div style={isTablet ? styles.contentMobile : styles.content}>{children}</div>;
 };
 

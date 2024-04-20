@@ -20,11 +20,11 @@ const CustomFooter: FC = () => {
     <Footer style={styles.footer}>
       <Typography>
         <Text>
-          Please, leave a ⭐️ on this{" "}
-          <a href="https://github.com/Pedrojok01/Web3-Boilerplate" target="_blank" rel="noopener noreferrer">
-            boilerplate
-          </a>{" "}
-          if you like it!
+          Checkout our           <a href="https://github.com/danteteder/ETHTallinn-2024" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>{" "} for more information!
+
+
         </Text>
       </Typography>
     </Footer>
