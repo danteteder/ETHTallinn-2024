@@ -2,6 +2,7 @@ import { useWeb3React } from "@web3-react/core";
 import { Divider } from "antd";
 import { useWindowSize } from "hooks";
 import { Infos, SignMessage, Status, TransferEth } from "./components";
+import UserFormSignIn from "./components/UserForm";
 
 
 const styles = {
@@ -35,7 +36,7 @@ type DisplayPaneProps = {
 const DisplayPane: React.FC<DisplayPaneProps> = ({ isDarkMode }) => {
   const { chainId, isActivating, isActive } = useWeb3React();
   const { isTablet } = useWindowSize();
-
+  
   return (
     <div
       style={{
@@ -48,6 +49,8 @@ const DisplayPane: React.FC<DisplayPaneProps> = ({ isDarkMode }) => {
       <div style={styles.content}>
         <Status isActivating={isActivating} isActive={isActive} />
         <Infos chainId={chainId} />
+
+        <UserFormSignIn />
 
         {isActive && (
           <>
