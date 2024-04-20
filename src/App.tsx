@@ -25,13 +25,12 @@ function App() {
       }}
     >
       <Layout style={styles.layout}>
-        <CustomHeader isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         <Router>
+          <CustomHeader isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
           <Routes>
             <Route path="/" element={<MainContent isDarkMode={isDarkMode} />} />
             <Route path="/create-password" element={<MainContent isDarkMode={isDarkMode} />} />
             <Route path="/retrieve-password" element={<RetrievePassword isDarkMode={isDarkMode} />} />
-
           </Routes>
         </Router>
         <CustomFooter />

@@ -1,3 +1,4 @@
+import React from "react";
 import { FC } from "react";
 
 import { Button, Layout } from "antd";
@@ -8,6 +9,7 @@ import forgetful_grandma from "assets/images/forgetful_grandma.png";
 import ConnectAccount from "components/Account/ConnectAccount";
 import ChainSelector from "components/ChainSelector";
 import { useWindowSize } from "hooks";
+import { Link } from "react-router-dom";
 
 const { Header } = Layout;
 
@@ -73,12 +75,14 @@ export const Logo: FC<LogoProps> = ({ isDarkMode }) => {
   const { isTablet } = useWindowSize();
 
   return (
-    <div style={{ paddingTop: isTablet ? "25px" : "40px" }}>
-      <img
-        src={isDarkMode ? forgetful_grandma : forgetful_grandma}
-        alt="forgetful_grandma"
-        width={isTablet ? "70px" : "90px"}
-      />
-    </div>
+    <Link to="/">
+      <div style={{ paddingTop: isTablet ? "25px" : "40px" }}>
+        <img
+          src={isDarkMode ? forgetful_grandma : forgetful_grandma}
+          alt="forgetful_grandma"
+          width={isTablet ? "70px" : "90px"}
+        />
+      </div>
+    </Link>
   );
 };
