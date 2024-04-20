@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Divider } from "@mui/material";
 import forgetful_grandma from 'assets/images/forgetful_grandma.png';
-import BiometricAuthButton from "components/displayPane/components/BiometricAuthButton";
+import BiometricAuthButton from "../../components/displayPane/components/BiometricAuthButton";
 
 interface MainContentProps {
   isDarkMode: boolean;
