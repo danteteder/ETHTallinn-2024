@@ -19,5 +19,5 @@ export const useSignerOrProvider = (): SignerOrProvider => {
     }
 
     return { provider, signer };
-  }, [provider]);
+  }, [provider, account]);
 };

@@ -1,10 +1,9 @@
 import { useWeb3React } from "@web3-react/core";
 import { Divider, Typography } from "antd";
-const { Title } = Typography;
-
 import { useWindowSize } from "hooks";
-
 import { Infos, SignMessage, Status, TransferEth } from "./components";
+
+const { Title } = Typography;
 
 const styles = {
   container: {

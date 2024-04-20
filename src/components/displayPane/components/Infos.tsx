@@ -1,10 +1,11 @@
 import { useWeb3React, Web3ReactHooks } from "@web3-react/core";
 import { Typography } from "antd";
-const { Paragraph } = Typography;
-
 import { CHAINS } from "data/networks";
 import { useNativeBalance, useWindowSize } from "hooks";
 import { getEllipsisTxt, parseBigNumberToFloat } from "utils/formatters";
+const { Paragraph } = Typography;
+
+
 
 const styles = {
   display: {
