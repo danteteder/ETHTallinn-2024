@@ -1,14 +1,17 @@
 import { FC } from "react";
-import { Button, Divider } from "@mui/material";
+import { Divider } from "@mui/material";
 import forgetful_grandma from 'assets/images/forgetful_grandma.png';
 import { Link } from 'react-router-dom';
 
+import BiometricAuthButton from "components/displayPane/components/BiometricAuthButton";
 
 interface MainContentProps {
   isDarkMode: boolean;
 }
 
 const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
+  const currentURL = window.location.href
+
   const styles = {
     content: {
       display: "flex",
@@ -71,6 +74,7 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
             Retrieve Your Password
           </Button>
         </div>
+        <BiometricAuthButton currentURL={currentURL} styles={styles} isDarkMode={isDarkMode}/>
       </div>
     </>
   );

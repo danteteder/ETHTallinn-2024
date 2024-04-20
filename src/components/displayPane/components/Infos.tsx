@@ -3,8 +3,6 @@ import { CHAINS } from "data/networks";
 import { useNativeBalance, useWindowSize } from "hooks";
 import { getEllipsisTxt, parseBigNumberToFloat } from "utils/formatters";
 
-
-
 const styles = {
   display: {
     paddingBlock: "0 15px",

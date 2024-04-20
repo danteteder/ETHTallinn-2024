@@ -3,7 +3,6 @@
     "baseUrl": "src",
     "target": "es2021",
     "rootDir": "./src",
-    "outDir": "./dist",
     "removeComments": true,
     "noEmitOnError": true,
     "sourceMap": true,
@@ -22,6 +21,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "noImplicitAny": false,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
@@ -34,5 +34,6 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

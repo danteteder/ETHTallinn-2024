@@ -18,7 +18,7 @@ const CustomFooter: FC = () => {
   return (
     <Footer style={styles.footer}>
         <div>
-          Checkout our           <a href="https://github.com/danteteder/ETHTallinn-2024" target="_blank" rel="noopener noreferrer">
+          Checkout our <a href="https://github.com/danteteder/ETHTallinn-2024" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>{" "} for more information!
 
