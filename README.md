@@ -1,6 +1,9 @@
 # Forgetful
 https://ethtallinn-forgetful.netlify.app/
 
+## Video Introduction To The Project
+https://www.loom.com/share/7e05be6deba74c41b15fc7debbec0bcb?sid=95ed6b24-b08b-4e29-8249-c4de032b5be6
+
 :rocket: **Introducing Forgetful: The Future of Password Management** :rocket:
 
 Are you overwhelmed by managing numerous passwords and seed phrases? Embrace the future with Forgetful – your ultimate solution for seamless, secure, and intuitive password management.
