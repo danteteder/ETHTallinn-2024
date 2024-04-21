@@ -48,7 +48,7 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
       textAlign: "center",
     },
     div: {
-          fontSize: '18px',
+          fontSize: '16px',
 
       textAlign: "center",
     },
