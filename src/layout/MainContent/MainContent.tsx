@@ -46,21 +46,21 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
 
   return (
     <>
-      <div style={styles.center}><h1>Forgetful<img src={forgetful_grandma} alt="Logo" width="120" height="102" /></h1></div>
-      <div style={styles.content}>
+<div style={{...styles.center}}>
+  <h1>Forgetful</h1>
+  <img src={forgetful_grandma} alt="Logo" width="120" height="102" style={{...styles.center}}/>
+</div>      <div style={styles.content}>
         <div style={styles.half}>
           <div style={{...styles.div, marginBottom: '60px'}}>
             <h1 style={styles.h1} >Don't Worry, We All Forget</h1>
-            <div style={styles.div}>Tired of forgetting passwords and seed phrases? <br/> It's like trying to find a Bitcoin in a haystack! <br/>But fear not, we've got the blockchain magic to fix that.</div>
+            <div style={styles.div}>Tired of forgetting passwords and seed phrases? <br/> It's like trying to find a Bitcoin in a haystack! <br/>But fear not, this is where Forgetful comes in.</div>
           </div>
-          <div style={{...styles.div, width: '70%' }}>
-            <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
-          </div>
+
           <h1 style={styles.h1}>What We Solve</h1>
           <div style={{...styles.div,width: '70%' }}>
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
-          <div style={{...styles.div, marginTop: '30px'}}>You know yourself, you will forget your password, but you'll never forget core things about yourself. We help you think ahead and forge a way to secure a password even if you've forgotten about it.
+          <div style={{...styles.div, marginTop: '30px'}}>You know yourself, you know you might forget your password, but you'll never forget core things about yourself. We help you think ahead and forge a way to secure a password even if you've forgotten about it.
             
              </div>
 
@@ -74,8 +74,16 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
                     <div style={{ width: '70%' }}>
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
-          <div>INSERT POTENTIAL FLOW DIAGRAM</div>
+<div>
+  <ul style={{ listStyleType: 'none' }}>
+    <li>→ Want to create unforgettable password for MetaMask</li>
+    <li>→ Use Forgetful</li>
+    <li>→ Create one with touch ID and self-assigned questions</li>
+    <li>→ Get seedphrase for Metamask</li>
+        <li>→ Now have the ability to retrieve it forever</li>
 
+  </ul>
+</div>
         </div>
         <div style={styles.half}>
           <BiometricAuthButton currentURL={currentURL} styles={styles} isDarkMode={isDarkMode}/>
