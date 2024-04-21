@@ -56,10 +56,10 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
 
   return (
     <>
-<div style={{...styles.center}}>
+<div style={{...styles.center, paddingTop: 30}}>
   <h1>Forgetful<img src={forgetful_grandma} alt="Logo" width="120" height="102" /></h1>
   
-</div>      <div style={styles.content}>
+</div>      <div style={{...styles.content, paddingTop: 30}}>
         <div style={styles.textHalf}>
           <div style={{...styles.div, marginBottom: '20px'}}>
             <h1 style={styles.h1} >Don't Worry, We All Forget</h1>
@@ -84,16 +84,15 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
                     <div style={{ width: '70%' }}>
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
-<div>
-  <ul style={{ listStyleType: 'none' }}>
-  <li>→ Want to create unforgettable password for MetaMask</li>
-    <li>→ Use Forgetful</li>
-    <li>→ Create one with touch ID and self-assigned security questions</li>
-    <li>→ Get seedphrase for Metamask</li>
-        <li>→ Now have the ability to retrieve it forever</li>
-
-  </ul>
-</div>
+          <div>
+            <ul style={{ listStyleType: 'none' }}>
+            <li>→ Want to create unforgettable password for MetaMask</li>
+              <li>→ Use Forgetful</li>
+              <li>→ Create one with touch ID and self-assigned security questions</li>
+              <li>→ Get seedphrase for Metamask</li>
+              <li>→ Now have the ability to retrieve it forever</li>
+            </ul>
+          </div>
         </div>
         <div style={styles.buttonHalf}>
                 <Link to="/create">
@@ -101,10 +100,10 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
                       Create Your Password
                     </Button>
                 </Link>
-                    <Link to="/retrieve-password">
-                        <Button variant="contained" size="large" sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396'}}>
-                          Retrieve Your Password
-                      </Button>
+                <Link to="/retrieve-password">
+                    <Button variant="contained" size="large" sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396' }}>
+                      Create Your Password
+                    </Button>
                 </Link>
         </div>
       </div>

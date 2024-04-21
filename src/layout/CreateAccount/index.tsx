@@ -3,15 +3,18 @@
 import { Box, Button, Container, TextField, ThemeProvider, Typography, createTheme } from "@mui/material";
 import BiometricAuthButton from "components/displayPane/components/BiometricAuthButton";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 interface CreateAccountPageProps {
   isDarkMode: boolean;
+  currentURL: string;
   numberOfQuestions?: number;
 }
 
-const CreateAccountPage = ({ isDarkMode }: CreateAccountPageProps) => {
-  const currentURL = window.location.href;
+const CreateAccountPage = ({ isDarkMode, currentURL }: CreateAccountPageProps) => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState<{ [key: string]: string }>({});
   const [numberOfQuestions, setNumberOfQuestions] = useState<number | null>(null);
   const [minAnswers, setMinAnswers] = useState<number | null>(null);
@@ -39,6 +42,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   if (minAnswers !== null && Object.values(formData).length >= minAnswers) {
     console.log(formData);
+    navigate('/phase3')
   } else {
     console.log('Not enough answers provided');
   }

@@ -73,6 +73,7 @@ export const Logo: FC<LogoProps> = ({ isDarkMode }) => {
   const { isTablet } = useWindowSize();
 
   return (
+    <>
     <Link to="/">
       <div style={{ paddingTop: isTablet ? "25px" : "40px" }}>
         <img
@@ -80,7 +81,14 @@ export const Logo: FC<LogoProps> = ({ isDarkMode }) => {
           alt="forgetful_grandma"
           width={isTablet ? "70px" : "90px"}
         />
+        
       </div>
     </Link>
+      <div>
+            Checkout our <a href="https://github.com/danteteder/ETHTallinn-2024" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>{" "} for more information!
+    </div>
+    </>
   );
 };

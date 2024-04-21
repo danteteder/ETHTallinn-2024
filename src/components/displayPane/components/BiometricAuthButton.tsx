@@ -97,10 +97,10 @@ const BiometricAuthButton = ({ currentURL, method }: BiometricAuthButtonProps) =
                     </Button>
                 </Link>
                     :
-                    <Link to="/retrieve-password">
-                        <Button variant="contained" size="large" onClick={handleSignIn} sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396'}}>
-                          Retrieve Your Password
-                        </Button>
+                <Link to="/verified">
+                    <Button variant="contained" size="large" onClick={handleSignIn} sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396'}}>
+                      Retrieve Your Password
+                    </Button>
                 </Link>}
         </Box>
     );

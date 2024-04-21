@@ -1,13 +1,14 @@
 import { Buffer } from "buffer";
 import { useState } from "react";
 import { Layout, ConfigProvider, theme } from "antd";
-import { CustomHeader, MainContent, CustomFooter } from "layout";
+import { CustomHeader, MainContent } from "layout";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Phase3 from './components/Phase3';
 import CreatePassword from "./components/CreatePassword";
-import RetrievePassword from './components/RetrievePassword';
 import ListOfQuestions from "./components/ListOfQuestions";
 import CreateAccountPage from "layout/CreateAccount";
+import SuccessPage from "layout/Success";
+import GetAccount from "layout/GetAccount";
 
 const styles = {
   layout: {
@@ -21,6 +22,8 @@ const styles = {
 function App() {
   const { defaultAlgorithm, darkAlgorithm } = theme;
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const currentURL = window.location.href;
+
   if (!window.Buffer) window.Buffer = Buffer;
   return (
     <ConfigProvider
@@ -36,11 +39,12 @@ function App() {
             <Route path="/list-of-questions" element={<ListOfQuestions isDarkMode={isDarkMode} />} />
             <Route path="/phase3" element={<Phase3 isDarkMode={isDarkMode} />} />
             <Route path="/create-password" element={<CreatePassword isDarkMode={isDarkMode} />} />
-            <Route path="/retrieve-password" element={<RetrievePassword isDarkMode={isDarkMode} />} />
-            <Route path="/create" element={<CreateAccountPage isDarkMode={isDarkMode} />} />
+            <Route path="/retrieve-password" element={<GetAccount isDarkMode={isDarkMode} currentURL={currentURL} />} />
+            <Route path="/create" element={<CreateAccountPage isDarkMode={isDarkMode} currentURL={currentURL} />} />
+            <Route path="/success" element={<SuccessPage isDarkMode={isDarkMode} />} />
+            <Route path="/verified" element={<SuccessPage isDarkMode={isDarkMode} />} />
           </Routes>
         </Router>
-        <CustomFooter />
       </Layout>
     </ConfigProvider>
   );
