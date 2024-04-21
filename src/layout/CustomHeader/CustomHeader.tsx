@@ -6,7 +6,6 @@ import { Button, Layout } from "antd";
 import dark_mode from "assets/images/dark_mode.png";
 import light_mode from "assets/images/light_mode.png";
 import forgetful_grandma from "assets/images/forgetful_grandma.png";
-import ConnectAccount from "components/Account/ConnectAccount";
 import ChainSelector from "components/ChainSelector";
 import { useWindowSize } from "hooks";
 import { Link } from "react-router-dom";
@@ -51,7 +50,6 @@ const CustomHeader: FC<CustomHeaderProps> = ({ isDarkMode, setIsDarkMode }) => {
       <Logo isDarkMode={isDarkMode} />
       <div style={styles.headerRight}>
         <ChainSelector />
-        <ConnectAccount />
         <Button
           shape="round"
           ghost

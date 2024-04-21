@@ -1,16 +1,15 @@
-/* eslint-disable */
+/* eslint-disable  */
 import { useCallback } from "react";
-
 import { Modal, Divider, message } from "antd";
-
 import coinbase_Logo from "assets/images/coinbase_Logo.png";
 import metamask_Logo from "assets/svg/metamask_Logo.svg";
 import walletconnect_Logo from "assets/svg/walletconnect_Logo.svg";
 import { hooks as coinbaseWallethooks, coinbaseWallet } from "connectors/coinbaseWallet";
 import { getName } from "connectors/getConnectorName";
+// eslint-disable-next-line
 import { hooks as metaMaskhooks, metaMask } from "connectors/metaMask";
+// eslint-disable-next-line
 import { hooks as walletConnecthooks, walletConnect } from "connectors/walletConnect";
-
 import ConnectButton from "./ConnectButton";
 
 const styles = {
@@ -26,8 +25,8 @@ const styles = {
 
 interface ConnectModalProps {
   isModalOpen: boolean;
-  isDarkMode: boolean; 
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isDarkMode: boolean; 
 }
 
 const { useIsActivating: useMMIsActivating } = metaMaskhooks;
@@ -92,6 +91,7 @@ const ConnectModal: React.FC<ConnectModalProps> = ({ isModalOpen, setIsModalOpen
             image={metamask_Logo}
             onClick={() => activateConnector("MetaMask")}
             loading={isMMActivating}
+            isDarkMode={isDarkMode}
           />
 
           <ConnectButton
@@ -99,6 +99,7 @@ const ConnectModal: React.FC<ConnectModalProps> = ({ isModalOpen, setIsModalOpen
             image={walletconnect_Logo}
             onClick={() => activateConnector("WalletConnect")}
             loading={isWCActivating}
+            isDarkMode={isDarkMode}
           />
 
           <ConnectButton
@@ -106,6 +107,7 @@ const ConnectModal: React.FC<ConnectModalProps> = ({ isModalOpen, setIsModalOpen
             image={coinbase_Logo}
             onClick={() => activateConnector("Coinbase Wallet")}
             loading={isCBActivating}
+            isDarkMode={isDarkMode}
           />
           <Divider />
           <div style={{ margin: "auto", fontSize: "15px", marginBottom: "15px" }}>

@@ -1,6 +1,6 @@
-import bip39 from 'bip39';
+import { generateMnemonic } from 'bip39';
 
-export const generateSeedPhrase = () => {
-    const mnemonic = bip39.generateMnemonic(); // Generates a 128-bit entropy mnemonic (12 words)
-    return mnemonic;
+export const generateSeedPhrase = (): string => {
+    const mnemonic = generateMnemonic(); // Generates a 128-bit entropy mnemonic (12 words)
+    return mnemonic || '';
 }
