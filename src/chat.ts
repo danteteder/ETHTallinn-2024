@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {Contract, Wallet} from "ethers";
 import ABI from "../contracts-main/examples/abis/ChatGpt.json";
 import * as readline from 'readline';
