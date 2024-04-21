@@ -1,15 +1,12 @@
-import { Box, Divider, Button } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 type BiometricAuthButtonProps = {
- currentURL: string,
- styles: {
-    buttonHalf: any
- },
-isDarkMode: any
+    currentURL: string,
+    method: 'signIn' | 'signUp'
 }
 
-const BiometricAuthButton = ({ currentURL, styles, isDarkMode }: BiometricAuthButtonProps) => {
+const BiometricAuthButton = ({ currentURL, method }: BiometricAuthButtonProps) => {
     const userInfo = {
                 id: new Uint8Array(16),
                 name: 'ethTallinn@example.com',
@@ -93,21 +90,18 @@ const BiometricAuthButton = ({ currentURL, styles, isDarkMode }: BiometricAuthBu
 
     return (
         <Box display='flex' justifyContent='center'>
-            <div style={styles.buttonHalf}>
-                <Link to="/create-password">
+                {method === 'signUp' ?
+                <Link to="/create">
                     <Button variant="contained" size="large" onClick={handleSignUp} sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396' }}>
-                      Create Your Password
+                      Register Biometrics
                     </Button>
                 </Link>
-                    <div style={{ width: '25%' }}>
-                      <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
-                    </div>
+                    :
                     <Link to="/retrieve-password">
-                <Button variant="contained" size="large" onClick={handleSignIn} sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396'}}>
-                  Retrieve Your Password
-                </Button>
-                </Link>
-            </div>
+                        <Button variant="contained" size="large" onClick={handleSignIn} sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396'}}>
+                          Retrieve Your Password
+                        </Button>
+                </Link>}
         </Box>
     );
 }

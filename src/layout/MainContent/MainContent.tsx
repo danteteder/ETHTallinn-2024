@@ -1,14 +1,13 @@
 import { FC } from "react";
-import { Divider} from "@mui/material";
+import { Button, Divider} from "@mui/material";
 import forgetful_grandma from 'assets/images/forgetful_grandma.png';
-import BiometricAuthButton from "../../components/displayPane/components/BiometricAuthButton";
+import { Link } from "react-router-dom";
 
 interface MainContentProps {
   isDarkMode: boolean;
 }
 
 const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
-  const currentURL = window.location.href
 
   const styles = {
   content: {
@@ -97,7 +96,16 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
 </div>
         </div>
         <div style={styles.buttonHalf}>
-          <BiometricAuthButton currentURL={currentURL} styles={styles} isDarkMode={isDarkMode}/>
+                <Link to="/create">
+                    <Button variant="contained" size="large" sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396' }}>
+                      Create Your Password
+                    </Button>
+                </Link>
+                    <Link to="/retrieve-password">
+                        <Button variant="contained" size="large" sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396'}}>
+                          Retrieve Your Password
+                      </Button>
+                </Link>
         </div>
       </div>
     </>

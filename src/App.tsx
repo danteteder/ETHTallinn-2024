@@ -7,6 +7,7 @@ import Phase3 from './components/Phase3';
 import CreatePassword from "./components/CreatePassword";
 import RetrievePassword from './components/RetrievePassword';
 import ListOfQuestions from "./components/ListOfQuestions";
+import CreateAccountPage from "layout/CreateAccount";
 
 const styles = {
   layout: {
@@ -36,6 +37,7 @@ function App() {
             <Route path="/phase3" element={<Phase3 isDarkMode={isDarkMode} />} />
             <Route path="/create-password" element={<CreatePassword isDarkMode={isDarkMode} />} />
             <Route path="/retrieve-password" element={<RetrievePassword isDarkMode={isDarkMode} />} />
+            <Route path="/create" element={<CreateAccountPage isDarkMode={isDarkMode} />} />
           </Routes>
         </Router>
         <CustomFooter />
