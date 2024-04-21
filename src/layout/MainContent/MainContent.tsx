@@ -89,7 +89,7 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
   <ul style={{ listStyleType: 'none' }}>
     <li>→ Want to create unforgettable password for MetaMask</li>
     <li>→ Use Forgetful</li>
-    <li>→ Create one with touch ID and self-assigned questions</li>
+    <li>→ Create one with touch ID and self-assigned security questions</li>
     <li>→ Get seedphrase for Metamask</li>
         <li>→ Now have the ability to retrieve it forever</li>
 
