@@ -102,7 +102,7 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
                 </Link>
                 <Link to="/retrieve-password">
                     <Button variant="contained" size="large" sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396' }}>
-                      Create Your Password
+                      Retrieve your password
                     </Button>
                 </Link>
         </div>
