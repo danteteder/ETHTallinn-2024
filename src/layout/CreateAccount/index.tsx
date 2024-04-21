@@ -10,9 +10,8 @@ interface CreateAccountPageProps {
   numberOfQuestions?: number;
 }
 
-
 const CreateAccountPage = ({ isDarkMode }: CreateAccountPageProps) => {
-const currentURL = window.location.href
+  const currentURL = window.location.href;
   const [formData, setFormData] = useState<{ [key: string]: string }>({});
   const [numberOfQuestions, setNumberOfQuestions] = useState<number | null>(null);
   const [minAnswers, setMinAnswers] = useState<number | null>(null);
@@ -87,14 +86,19 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     </Box>
   );
 
+  
   const formContent = (
     <form onSubmit={handleSubmit}>
         <BiometricAuthButton currentURL={currentURL} method='signUp' />
       {[...Array(numberOfQuestions || 0)].map((_, index) => (
           <Box key={index} mb={2} display='flex' flexDirection='column' alignItems='center'>
-          <Typography variant="h6" sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396' }}>
-            Question {index + 1}
-          </Typography>
+          <TextField
+            fullWidth
+            id={`questionTitle_${index}`}
+            variant="outlined"
+            onChange={handleChange}
+            value={formData[`questionTitle_${index}`] || `Question ${index + 1}`}
+          />
           <TextField
             fullWidth
             id={`question_${index}`}
