@@ -12,11 +12,11 @@ interface CreateAccountPageProps {
 
 
 const CreateAccountPage = ({ isDarkMode }: CreateAccountPageProps) => {
-  const currentURL = window.location.href
+const currentURL = window.location.href
   const [formData, setFormData] = useState<{ [key: string]: string }>({});
   const [numberOfQuestions, setNumberOfQuestions] = useState<number | null>(null);
+  const [minAnswers, setMinAnswers] = useState<number | null>(null);
   const storedCredential = localStorage.getItem('biometricCredential');
-
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -24,27 +24,33 @@ const CreateAccountPage = ({ isDarkMode }: CreateAccountPageProps) => {
       ...prevData,
       [id]: value
     }));
-  };
-
-  const handleGenerateQuestions = () => {
-    const minAnswers = parseInt(formData['minAnswers'], 10);
-    if (!isNaN(minAnswers)) {
-      setNumberOfQuestions(minAnswers);
+    if (id === 'minAnswers') {
+      setMinAnswers(parseInt(value, 10));
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(formData);
+  const handleGenerateQuestions = () => {
+    const amountOfQuestions = parseInt(formData['amountOfQuestions'], 10);
+    if (!isNaN(amountOfQuestions)) {
+      setNumberOfQuestions(amountOfQuestions);
+    }
   };
 
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  if (minAnswers !== null && Object.values(formData).length >= minAnswers) {
+    console.log(formData);
+  } else {
+    console.log('Not enough answers provided');
+  }
+};
   const theme = createTheme({
     palette: {
       mode: isDarkMode ? 'dark' : 'light',
     },
   });
 
-   useEffect(() => {
+  useEffect(() => {
     if (storedCredential?.length) {
       setFormData(prevData => ({
         ...prevData,
@@ -56,7 +62,17 @@ const CreateAccountPage = ({ isDarkMode }: CreateAccountPageProps) => {
   const generateQuestionsContent = (
     <Box display="flex" flexDirection="column" alignItems="center">
       <Typography variant="h6" sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396' }}>
-        Min. Answers Needed
+        Amount of Questions to Generate
+      </Typography>
+      <TextField
+        fullWidth
+        id="amountOfQuestions"
+        variant="outlined"
+        onChange={handleChange}
+        value={formData['amountOfQuestions'] || ''}
+      />
+      <Typography variant="h6" sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396' }}>
+        Min. Answers Needed to Get Access to Passphrase
       </Typography>
       <TextField
         fullWidth
@@ -65,9 +81,9 @@ const CreateAccountPage = ({ isDarkMode }: CreateAccountPageProps) => {
         onChange={handleChange}
         value={formData['minAnswers'] || ''}
       />
-        <Button variant="contained" color="primary" onClick={handleGenerateQuestions} sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396' }}>
-          Generate Questions
-        </Button>
+      <Button variant="contained" color="primary" onClick={handleGenerateQuestions} sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396' }}>
+        Generate Questions
+      </Button>
     </Box>
   );
 
