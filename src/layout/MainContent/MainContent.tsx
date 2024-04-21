@@ -43,7 +43,7 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
       alignItems: "center",
       justifyContent: "center",
       color: isDarkMode ? "white" : "black" ,
-      fontSize: '40px' 
+      fontSize: '25px' 
     },
         h1: {
       textAlign: "center",
@@ -62,7 +62,7 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
   
 </div>      <div style={styles.content}>
         <div style={styles.textHalf}>
-          <div style={{...styles.div, marginBottom: '60px'}}>
+          <div style={{...styles.div, marginBottom: '20px'}}>
             <h1 style={styles.h1} >Don't Worry, We All Forget</h1>
             <div style={styles.div}>Tired of forgetting passwords and seed phrases? <br/> It's like trying to find a Bitcoin in a haystack! <br/>But fear not, this is where Forgetful comes in.</div>
           </div>
