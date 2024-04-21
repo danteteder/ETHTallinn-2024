@@ -6,7 +6,6 @@ const { Footer } = Layout;
 
 const styles = {
   footer: {
-    position: "fixed",
     textAlign: "center",
     width: "100%",
     bottom: "0",

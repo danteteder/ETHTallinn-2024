@@ -11,23 +11,32 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
   const currentURL = window.location.href
 
   const styles = {
-    content: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "stretch", 
-      height: "100vh",
-      overflow: "auto",
-      color: isDarkMode ? "white" : "black" 
-    },
-    half: {
-      flex: 1,
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center", 
-      padding: "50px",
-      color: isDarkMode ? "white" : "black" 
-    },
+  content: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "stretch", 
+    height: "100vh",
+    overflow: "auto",
+    color: isDarkMode ? "white" : "black" 
+  },
+  textHalf: {
+    flex: 3,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center", 
+    padding: "50px",
+    color: isDarkMode ? "white" : "black" 
+  },
+  buttonHalf: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center", 
+    padding: "50px",
+    color: isDarkMode ? "white" : "black" 
+  },
     center: {
       display: "flex",
       flexDirection: "column",
@@ -40,6 +49,8 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
       textAlign: "center",
     },
     div: {
+          fontSize: '18px',
+
       textAlign: "center",
     },
   } as const;
@@ -47,10 +58,10 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
   return (
     <>
 <div style={{...styles.center}}>
-  <h1>Forgetful</h1>
-  <img src={forgetful_grandma} alt="Logo" width="120" height="102" style={{...styles.center}}/>
+  <h1>Forgetful<img src={forgetful_grandma} alt="Logo" width="120" height="102" /></h1>
+  
 </div>      <div style={styles.content}>
-        <div style={styles.half}>
+        <div style={styles.textHalf}>
           <div style={{...styles.div, marginBottom: '60px'}}>
             <h1 style={styles.h1} >Don't Worry, We All Forget</h1>
             <div style={styles.div}>Tired of forgetting passwords and seed phrases? <br/> It's like trying to find a Bitcoin in a haystack! <br/>But fear not, this is where Forgetful comes in.</div>
@@ -60,7 +71,7 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
           <div style={{...styles.div,width: '70%' }}>
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
-          <div style={{...styles.div, marginTop: '30px'}}>You know yourself, you know you might forget your password, but you'll never forget core things about yourself. We help you think ahead and forge a way to secure a password even if you've forgotten about it.
+          <div style={{...styles.div, marginTop: '30px'}}>You know yourself, you know you might forget your password, <br/>but you'll never forget core things about yourself. <br/>We help you think ahead and forge a way to secure a password even if you've forgotten about it.
             
              </div>
 
@@ -68,9 +79,9 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
               <div style={{ width: '70%' }}>
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
-          <div style={{...styles.div, marginTop: '30px'}}>By combining biometric identification, self-assigned security questions (If you're feeling uncreative, AI will help), and blockchain encryptions</div>
+          <div style={{...styles.div, marginTop: '30px'}}>By combining biometric identification, self-assigned security questions (If you're feeling uncreative, AI will help),<br/> and blockchain encryptions to create a constantly retrievable password in a safe and decentralized way</div>
 
-          <h1 style={styles.h1}>Potential Usecase Flow</h1>
+          <h1 style={styles.h1}>Potential Usecase</h1>
                     <div style={{ width: '70%' }}>
             <Divider sx={{ height: '2px', backgroundColor: isDarkMode ? 'white' : 'black' }} />
           </div>
@@ -85,7 +96,7 @@ const MainContent: FC<MainContentProps> = ({ isDarkMode }) => {
   </ul>
 </div>
         </div>
-        <div style={styles.half}>
+        <div style={styles.buttonHalf}>
           <BiometricAuthButton currentURL={currentURL} styles={styles} isDarkMode={isDarkMode}/>
         </div>
       </div>

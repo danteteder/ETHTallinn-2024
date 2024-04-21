@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 type BiometricAuthButtonProps = {
  currentURL: string,
  styles: {
-    half: any
+    buttonHalf: any
  },
 isDarkMode: any
 }
@@ -93,7 +93,7 @@ const BiometricAuthButton = ({ currentURL, styles, isDarkMode }: BiometricAuthBu
 
     return (
         <Box display='flex' justifyContent='center'>
-            <div style={styles.half}>
+            <div style={styles.buttonHalf}>
                 <Link to="/create-password">
                     <Button variant="contained" size="large" onClick={handleSignUp} sx={{ fontFamily: "'IBM Plex Mono', monospace", margin: '20px', fontSize: '20px', fontWeight: 'bold', backgroundColor: '#0A9396' }}>
                       Create Your Password
